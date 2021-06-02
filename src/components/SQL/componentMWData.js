@@ -33,12 +33,13 @@ class ComponentMWData extends React.Component {
   }
 
   async componentDidMount() {
+    let errString = "Данные для документов не найдены"
     try {
         const response = await fetch(MW_API_URL + this.props.idCard);
         const responseMW = await response.json();
       
         if ( responseMW.hasOwnProperty('error') ) {
-          throw "Данные для документов не найдены";
+            throw errString;
         }  
         else {
             this.setState({
