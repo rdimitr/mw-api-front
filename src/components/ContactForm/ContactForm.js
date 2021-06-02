@@ -18,15 +18,12 @@ class ContactForm extends Component {
     };
 
     cardAmbFocusHandler = event => {
-        const resTableShow = event.target.value;
         this.setState({
             resTableShow: false
         });
     }
 
     resTableChangeHandler = event => {
-        const { cardAmb } = this.state;
-
         this.setState({
             resTableShow: false
         });
